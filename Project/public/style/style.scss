@@ -1,0 +1,106 @@
+$primary-color: #e91e63;
+$secondary-color: #ff4081;
+$background-color: #fce4ec;
+$text-color: #880e4f;
+$container-bg: #ffffff;
+$button-bg: $primary-color;
+$button-hover-bg: $secondary-color;
+$box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: $background-color;
+    color: $text-color;
+    height: 100vh;
+    margin: 0;
+    @include flex-center;
+}
+
+.container {
+    background: $container-bg;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: $box-shadow;
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+
+    h1 {
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+        color: $primary-color;
+    }
+
+    .scoreboard {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        .player, .computer {
+            flex: 1;
+            margin: 0 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: $box-shadow;
+            background-color: $background-color;
+
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+            }
+
+            .dice {
+                display: flex;
+                justify-content: center;
+                margin: 20px 0;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                    margin: 0 5px;
+                }
+            }
+
+            p {
+                font-size: 1.2rem;
+                margin: 5px 0;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    button {
+        background-color: $button-bg;
+        border: none;
+        color: white;
+        padding: 15px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1.2rem;
+        margin: 10px 5px;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: $button-hover-bg;
+        }
+    }
+
+    #result {
+        margin-top: 20px;
+        font-size: 1.5rem;
+        color: $secondary-color;
+        font-weight: bold;
+    }
+}
